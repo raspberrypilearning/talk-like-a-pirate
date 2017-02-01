@@ -1,0 +1,54 @@
+# Talk like a Pirate
+
+In this resource you will create a web page which can translate normal English text into pirate speak, using jQuery and regular expressions.
+
+Or, in pirate speak...
+**Arr, me hearties. In this resource ye will create a web page which can translate normal English text into pirate speak, usin' jQuery and regularrr expressions.**
+
+## The First Step
+
+First we'll do X.
+
+1. First do A
+
+1. Then do B
+
+1. Now do C in code:
+
+    ```python
+    print("Hello world")
+    ```
+
+    In Python the `print` function is something
+
+1. Now do D:
+
+    ![](images/gpio-setup.png)
+
+    Wire up the button to pin 17 and ground
+
+1. Now do X
+
+Now we have X
+
+## The Next Step
+
+Now we've done X, we'll do Y.
+
+1. First do A
+
+1. Then do B
+
+1. Now do C in code:
+
+    ```python
+    print("Hello world")
+    ```
+
+    In Python the `print` function is something
+
+1. Now do D
+
+1. Now do Y
+
+Now we have X and Y
