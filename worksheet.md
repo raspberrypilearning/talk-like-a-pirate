@@ -128,7 +128,7 @@ Assuming the computer running your pirate speak web page has an internet connect
 
 jQuery allows you to detect when *events* happen on a web page (such as the user typing or clicking on something) and then update the page live in response to the event. We need to check that the page has fully loaded before we start detecting events.
 
-1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but write all jQuery code in the **JS** section of your pen.
+1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but write all of the rest of the code in the **JS** section of your pen.
 
 1. Between the `<script>` tags (or in the **JS** section on CodePen) add the following code:
 
@@ -159,7 +159,9 @@ jQuery allows you to detect when *events* happen on a web page (such as the user
 
   ```JavaScript
   $("#normal").keyup(function(){
-    $('#pirate').val("yarr");
+    var words = $("#normal").val();
+
+    $("#pirate").val(words);
   });
   ```
 
@@ -168,9 +170,90 @@ jQuery allows you to detect when *events* happen on a web page (such as the user
   - `.keyup(` - when a key is pressed and let go... (**event**)
   - `function(){` - ...execute the code inside this function... (**action**)
 
-  What do you think the code `$('#pirate').val("yarr");` means? Can you break it down into parts?
-  - `$('#pirate')` - what is this identifier referring to?
-  - `.val()` - this function means "set the value"
-  - `"yarr"` - what will happen to this text?
+  What do you think the code `var words = $("#normal").val();` means? Can you break it down into parts?
+  - `var words =` - we are making a *variable* called `words` to store some data
+  - `$('#normal')` - what is this identifier referring to?
+  - `.val();` - this function means "the value of"
+
+  Can you break down the line `$("#pirate").val(words);` and have a guess what it does?
 
   Predict what will happen when you save the code and type something into the "Landlubbers" box, then try it and see if you were right.
+
+1. If your code worked correctly, the same words you type in the **Landlubbers** box should appear in the **Pirates** box as you type. Although this is not the finished product, it is a good step forward because we now know how to make the contents of the `pirate` textarea change when something is typed in the `normal` textarea.
+
+## Replace words with pirate words
+
+1. To talk like a pirate, we need to replace certain words with pirate versions of the words. For example, pirates never say "hello", they say "ahoy". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our variable called `words`.
+
+1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between creating the variable `words` and assigning its value to the textarea with the id `#pirates`.
+
+  ```JavaScript
+  words = words.replace(/hello/gi, "ahoy");
+  ```
+
+  Let's examine this code further:
+  - `words =` - Set the value of the variable words equal to...
+  - `words.replace(` - ...whatever it was before, but replace...
+  - `/hello/gi` - ...the word hello with...
+  - `, "ahoy");` - ...the word ahoy
+
+  You might be wondering why the word "hello" is written as `/hello/gi` - this pirate secret will be revealed in the next section!
+
+1. Save your code and test it by typing in a sentence containing the word "hello" in the **Landlubbers** box. You should see your word replaced with "ahoy" in the **Pirates** box.
+
+  ![Hello converted to ahoy](images/ahoy-there.png)
+
+1. Now see if you can add more lines of code like this to replace other words with more pirate-like words. For example, pirates say "yer" instead of "you", or "avast" instead of "stop". Try looking for pirate speak websites to find out other pirate word substitutions to experiment with! Simply replace the word `hello` with the normal word to find, and the word `"ahoy"` with the pirate equivalent.
+
+## Using regular expressions to alter words
+
+So how does the computer know which word we want to replace and what to replace it with? Remember the line of code we wrote to replace "hello" with "ahoy":
+
+```JavaScript
+words = words.replace(/hello/gi, "ahoy");
+```
+You might have wondered why we had to write `/hello/gi` for the word to find, and only `"ahoy"` for the word to replace it with. Why is that? The answer is that to specify the sequence of characters we are looking for, we are actually using something called a **regular expression** (sometimes called a **regex** for short).
+
+A regular expression is a way of specifying a particular sequence of characters to look for in a piece of text. The characters we are searching for are put between the slashes `/`, so in this case we are just searching for the word `/hello/`. The `g` after the second slash means *global* - we are telling the code to replace the word `hello` with `ahoy` _every time it is found_. If we did not put a `g` here, only the first `hello` found would be replaced. The `i` means *case insensitive* - we are telling the code that we don't mind if it finds `Hello` or `HELLO` or even `hELlo'` - all of these will match and replaced with `ahoy`.
+
+Regular expressions are extremely powerful because not only can they match exact sequences of characters like `hello`, they can also be used to match patterns of characters. There is a [full list of all characters that can be used in a regex](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), but we explain here some examples that you could use in your pirate text generator to get you started:
+
+1. You could use the regex character `^` (shift+6 on many keyboards) which means "the start of the text". This code will insert the line `"Arr, me hearties. "` at the start of anything you type!
+  ```JavaScript
+  words = words.replace(/^/, "Arr, me hearties. ");
+  ```
+
+1. You could use the regex `/(\w+)ev(\w+)\s/g`. This one is a bit tricker so we'll break it down:
+
+  - `\w` - matches any single alphanumeric character (so any letter or number, or underscore)
+  - `+` - matches the previous character 1 or more times
+  - `\w+` - ...so together they mean *any* 1 or more alphanumeric character
+
+  - `()` - brackets around any part of a regex mean "save what was matched so we can use it later"
+
+  - `ev` - this is just the letters ev. (Notice that the `\w` had a backslash character to show that it means something different to a normal letter w.)
+  - `\s` - this means a single space character
+  - `/g` - we already know that the `g` means to match everywhere
+
+  So, to explain this regex in plain English:
+  *Find a string with: any 1 or more letters/numbers (and remember them), then the letters ev, then any 1 or more letters/numbers (and remember them), then a space.*
+
+  So this would match any words containing the letters ev such as never or whatever. Of course, pirates never say "never", they say "ne'er". So we tell the program to reconstruct the word, but with an apostrophe instead of the v.
+
+  - `$1` means the first saved match, `$2` means the second saved match and so on...
+  - ...so `"$1e'$2 "` means *the first saved string, then e', then the second saved string*.
+
+  You might be wondering why we didn't just look up and replace all instances of letter `v` with an apostrophe? Firstly, we wouldn't want to replace the letter `v` at the start of words as we would end up saying `a'ast` instead of `avast` which doesn't make much sense. We also don't want to replace the letter `v` in the middle of words if it doesn't have an `e` before it otherwise we would end up with `shi'er me timbers` which just isn't what a pirate would say.
+
+  Here is the finished code:
+
+  ```JavaScript
+  words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 ");
+  ```
+  Here is our finished pirate text generator with this regex demonstrated.
+  ![Finished pirate](images/finished-pirate.png)
+
+
+## What's next?
+- See what you can add to your pirate speech generator! A more fully featured example is on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
+- Could you create a generator for any other type of speech? Perhaps you can make people talk like Yoda from Star Wars, or talk in Cockney rhyming slang? 

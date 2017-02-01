@@ -43,7 +43,7 @@ $(document).ready(function(){
         // match *-ed and replace it with be *ing
         words = words.replace(/^/, "Arr, me hearties. ");
         words = words.replace(/(\w+)!\s/g, "$1! Yo ho ho! ");
-        words = words.replace(/(\w+)v(\w+)\s/g, "$1'$2 ");
+        words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 ");
 
         // The order matters here
         words = words.replace(/was\s(\w+)ed\s/g, 'be $1ing ');
