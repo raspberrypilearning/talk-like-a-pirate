@@ -142,8 +142,8 @@ jQuery allows you to detect when *events* happen on a web page (such as the user
   The code may look complicated, so let's break it down:
   - `$(document)` - This identifies what you are talking about - in this case the whole document. This is the **identifier**.
   - `.ready(` - This is a call to a function which means "when it is ready", or "when it has fully loaded". This is the **event**.
-  - `function(){` - This creates a function (a section of code) to be executed when the event is triggered. This is the **action**.
-  - `alert("Page has loaded");` - This pops up a box with the message "Page has loaded"
+  - `function(){` - This creates a function (a section of code) to be executed when the event is triggered.
+  - `alert("Page has loaded");` - This pops up a box with the message "Page has loaded". This is the **action**.
   - `});` - The ending for the function (`}`), the ending for the `.ready(` call (`)`) and the end of this line of code (`;`)
 
   We can generalise this as "Wait until [**identifier**] has [**event**] and do [**action**]".
@@ -183,7 +183,7 @@ jQuery allows you to detect when *events* happen on a web page (such as the user
 
 ## Replace words with pirate words
 
-1. To talk like a pirate, we need to replace certain words with pirate versions of the words. For example, pirates never say "hello", they say "ahoy". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our variable called `words`.
+1. To talk like a pirate, we need to replace certain words with pirate versions of the words. For example, pirates never say "hello", they say "ahoy". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our variable called `words`. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
 
 1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between creating the variable `words` and assigning its value to the textarea with the id `#pirates`.
 
