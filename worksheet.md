@@ -128,7 +128,7 @@ Assuming the computer running your pirate speak web page has an internet connect
 
 jQuery allows you to detect when *events* happen on a web page (such as the user typing or clicking on something) and then update the page live in response to the event. We need to check that the page has fully loaded before we start detecting events.
 
-1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but write all of the rest of the code in the **JS** section of your pen.
+1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but **write all of the rest of the code in the JS section of your pen**.
 
 1. Between the `<script>` tags (or in the **JS** section on CodePen) add the following code:
 
@@ -243,7 +243,7 @@ Regular expressions are extremely powerful because not only can they match exact
 
   *Find ALL matches containing: any 1 or more letters/numbers (and remember them), then the letters ev, then any 1 or more letters/numbers (and remember them), then a space.*
 
-  So this would match any words containing the letters ev such as n**ev**er or what**ev**er. Of course, pirates never say "never", they say "ne'er". So we tell the program to reconstruct the word, but with an apostrophe instead of the v.
+  So this would match any words containing the letters ev such as n**ev**er or what**ev**er, as long as they are followed by a space. Of course, pirates never say "never", they say "ne'er". So we tell the program to reconstruct the word, but with an apostrophe instead of the v.
 
   - `$1` means what was matched by the first brackets, `$2` means the second brackets and so on...
 
@@ -260,7 +260,8 @@ Regular expressions are extremely powerful because not only can they match exact
   ```JavaScript
   words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 ");
   ```
-  Here is our finished pirate text generator with both of these regular expressions demonstrated.
+  Here is our finished pirate text generator with both of these regular expressions demonstrated, as well as some other pirate word replacements.
+
   ![Finished pirate](images/finished-pirate.png)
 
 
