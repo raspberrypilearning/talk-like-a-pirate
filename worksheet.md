@@ -62,9 +62,9 @@ Assuming the computer running your pirate speak web page has an internet connect
 
 ## Typing in your text
 
-1. You need to add two `<textarea>` boxes - one to type in the normal text and the other to display the pirate speak text. These boxes should appear on the page, so this code goes between the `<body>` and `</body>` tags (or in the HTML box if you are using CodePen).
+1. You need to add two `<textarea>` boxes. In one of them you will type in the normal text, while the other displays the pirate speak text. These boxes should appear on the page, so this code goes between the `<body>` and `</body>` tags (or in the HTML box if you are using CodePen).
 
-  This code creates a box called "Landlubbers" which is where we will write our normal text. Notice that it has the **id** value `normal`: we are giving the text box a name so we can refer to it later.
+  This code creates a box called "Landlubbers", which is where we will write our normal text. Notice that it has the **id** value `normal`: we are giving the text box a name so we can refer to it later.
 
   ```html
   <h2>Landlubbers</h2>
@@ -129,7 +129,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
 1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but **write all of the rest of the code in the JS section of your pen**.
 
-1. Between the `<script>` tags (or in the **JS** section on CodePen) add the following code:
+1. Between the `<script>` tags (or in the **JS** section on CodePen), add the following code:
 
   ```JavaScript
   $(document).ready(function(){
@@ -150,7 +150,6 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 1. Save the code and refresh your web browser. If your jQuery code has worked, you should see a popup box appear when you load the page.
 
   ![Page loaded dialog](images/page-has-loaded.png)
-
 
 ## Change text on key press
 
