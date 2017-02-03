@@ -9,7 +9,7 @@ Or, in pirate speak...
 
 1. Open up a blank file in your chosen text editor and save the file as follows:
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and also change the drop-down for the 'Save as' type to *All files*.
+ -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the 'Save as' type to *All files*.
 
   ![Save as HTML using Notepad](images/save-as-html-notepad.png)
 
@@ -21,11 +21,11 @@ Or, in pirate speak...
 
   ![Mac saving as HTML](images/mac-name-file.png)
 
- - If you're using **Nano** on a Raspberry Pi, open a terminal window, move to the directory you wish to create your web page in, and type `nano index.html`.
+ - If you're using **Nano** on a Raspberry Pi, open a terminal window, move to the directory in which you wish to create your web page, and type `nano index.html`.
 
   ![Nano creating HTML](images/pi-html-nano.png)
 
- - If you're using [CodePen](http://codepen.io), simply open up a new pen, then **skip steps 2 and 3**.
+ - If you're using [CodePen](http://codepen.io), simply open up a new pen, then **skip the second and third steps**.
 
 
 2. This HTML code gives you the basic structure of a page. Copy and paste the code into the file you created, then save the file.
@@ -60,12 +60,11 @@ jQuery is a JavaScript library intended to make it easy to use JavaScript. The e
   ```
 Assuming the computer running your pirate speak web page has an internet connection, you should now have jQuery available. If you want to run the generator without an internet connection, **this code will not work** as your computer will not be able to access the library, so follow the instructions from [w3schools](http://www.w3schools.com/jquery/jquery_get_started.asp) to download a local copy of jQuery.
 
-
 ## Typing in your text
 
 1. You need to add two `<textarea>` boxes - one to type in the normal text and the other to display the pirate speak text. These boxes should appear on the page, so this code goes between the `<body>` and `</body>` tags (or in the HTML box if you are using CodePen).
 
-  This code creates a box called "Landlubbers" which is where we will write our normal text. Notice that it has the **id** value `normal` - we are giving the text box a name so we can refer to it later.
+  This code creates a box called "Landlubbers" which is where we will write our normal text. Notice that it has the **id** value `normal`: we are giving the text box a name so we can refer to it later.
 
   ```html
   <h2>Landlubbers</h2>
@@ -126,7 +125,7 @@ Assuming the computer running your pirate speak web page has an internet connect
 
 ## Checking the page has loaded
 
-jQuery allows you to detect when *events* happen on a web page (such as the user typing or clicking on something) and then update the page live in response to the event. We need to check that the page has fully loaded before we start detecting events.
+jQuery allows you to detect when **events** happen on a web page (such as the user typing or clicking on something) and then update the page live in response to the event. We need to check that the page has fully loaded before we start detecting events.
 
 1. If you are using a text editor, add a `<script>` tag and a closing `</script>` tag immediately after the line of code where you imported jQuery. If you are using CodePen, skip this step but **write all of the rest of the code in the JS section of your pen**.
 
@@ -137,13 +136,13 @@ jQuery allows you to detect when *events* happen on a web page (such as the user
     alert("Page has loaded");
   });
   ```
-  In plain English, this code says "Wait until the page has fully loaded, then pop up a box saying it has loaded.
+  In plain English, this code says "Wait until the page has fully loaded, then make a box pop up saying that it has loaded".
 
   The code may look complicated, so let's break it down:
-  - `$(document)` - This identifies what you are talking about - in this case the whole document. This is the **identifier**.
+  - `$(document)` - This identifies what you are talking about, in this case the whole document. This is the **identifier**.
   - `.ready(` - This is a call to a function which means "when it is ready", or "when it has fully loaded". This is the **event**.
   - `function(){` - This creates a function (a section of code) to be executed when the event is triggered.
-  - `alert("Page has loaded");` - This pops up a box with the message "Page has loaded". This is the **action**.
+  - `alert("Page has loaded");` - This makes a box pop up with the message "Page has loaded". This is the **action**.
   - `});` - The ending for the function (`}`), the ending for the `.ready(` call (`)`) and the end of this line of code (`;`)
 
   We can generalise this as "Wait until [**identifier**] has [**event**] and do [**action**]".
