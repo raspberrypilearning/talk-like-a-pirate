@@ -201,7 +201,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
   ![Hello converted to ahoy](images/ahoy-there.png)
 
-1. Now see if you can add more lines of code like this to replace other words with more piratical versions. For example, pirates say "yer" instead of "you", avast "avast" instead of "stop". Try looking for pirate speak websites to find out other pirate word substitutions to experiment with! Use the same code, but put in the word you want to find, and the pirate equivalent you want to replace it with.
+1. Now see if you can add more lines of code like this to replace other words with more piratical versions. For example, pirates say "yer" instead of "you", and "avast" instead of "stop". Try looking for pirate speak websites to find out other pirate word substitutions to experiment with! Use the same code, but put in the word you want to find, and the pirate equivalent you want to replace it with.
 
 ## Using regular expressions to alter words
 
@@ -261,5 +261,5 @@ Regular expressions are extremely powerful: not only can they match exact sequen
 
 
 ## What next?
-- See what you can add to your pirate speech generator! THere is a more fully featured example on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
+- See what you can add to your pirate speech generator! There is a more fully featured example on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
 - Could you create a generator for any other type of speech? Perhaps you can make people talk like Yoda from Star Wars, or talk in Cockney rhyming slang?
