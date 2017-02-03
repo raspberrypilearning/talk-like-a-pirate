@@ -9,7 +9,7 @@ Arr, me hearties. In this resource ye will create a web page which can translate
 
 1. Open up a blank file in your chosen text editor and save the file as follows:
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the 'Save as' type to *All files*.
+ -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the 'Save as' type to **All files**.
 
   ![Save as HTML using Notepad](images/save-as-html-notepad.png)
 
