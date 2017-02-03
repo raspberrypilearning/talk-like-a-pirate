@@ -181,7 +181,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
 ## Replace words with pirate words
 
-1. To talk like a pirate, we need to replace certain words with pirate versions of the words. For example, pirates never say "hello", they say "ahoy". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our variable called `words`. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
+1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
 
 1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between creating the variable `words` and assigning its value to the textarea with the id `#pirates`.
 
@@ -195,13 +195,13 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
   - `/hello/gi` - ...the word hello with...
   - `, "ahoy");` - ...the word ahoy
 
-  You might be wondering why the word "hello" is written as `/hello/gi` - this pirate secret will be revealed in the next section!
+  You might be wondering why the word "hello" is written as `/hello/gi`: this pirate secret will be revealed in the next section!
 
 1. Save your code and test it by typing in a sentence containing the word "hello" in the **Landlubbers** box. You should see your word replaced with "ahoy" in the **Pirates** box.
 
   ![Hello converted to ahoy](images/ahoy-there.png)
 
-1. Now see if you can add more lines of code like this to replace other words with more pirate-like words. For example, pirates say "yer" instead of "you", or "avast" instead of "stop". Try looking for pirate speak websites to find out other pirate word substitutions to experiment with! Use the same code, but put in the word you want to find, and the pirate equivalent you want to replace it with.
+1. Now see if you can add more lines of code like this to replace other words with more piratical versions. For example, pirates say "yer" instead of "you", avast "avast" instead of "stop". Try looking for pirate speak websites to find out other pirate word substitutions to experiment with! Use the same code, but put in the word you want to find, and the pirate equivalent you want to replace it with.
 
 ## Using regular expressions to alter words
 
@@ -215,10 +215,10 @@ You might have wondered why we had to write `/hello/gi` for the word to find, an
 A regular expression is a way of specifying a particular sequence of characters to look for in a piece of text.
 
 - The characters we are searching for are put between the slashes `/`, so in this case we are just searching for the word `/hello/`.
-- The `g` after the second slash means *global* - we are telling the code to replace the word `hello` with `ahoy` __every time it is found__. If we did not put a `g` here, only the first `hello` found would be replaced.
-- The `i` means *case insensitive* - we are telling the code that we don't mind if it finds `Hello` or `HELLO` or even `hELlo'` - all of these will match and replaced with `ahoy`.
+- The `g` after the second slash means **global**: we are telling the code to replace the word `hello` with `ahoy` **every time it is found**. If we did not put a `g` here, only the first `hello` found would be replaced.
+- The `i` means **case insensitive**: we are telling the code that we don't mind if it finds `Hello` or `HELLO` or even `hELlo'`. All of these will match and will be replaced with `ahoy`.
 
-Regular expressions are extremely powerful because not only can they match exact sequences of characters like `hello`, they can also be used to match patterns of characters. There is a [good guide on how to create a regex](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), but we explain here some examples that you could use in your pirate text generator to get you started:
+Regular expressions are extremely powerful: not only can they match exact sequences of characters like `hello`, they can also be used to match patterns of characters. There is a good [guide on how to create a regex](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), but we wil explain some examples that you could use in your pirate text generator to get you started:
 
 1. You could use the regex character `^` (shift+6 on many keyboards) which means "the start of the text". This code will insert the line `"Arr, me hearties. "` at the start of anything you type!
   ```JavaScript
@@ -227,9 +227,9 @@ Regular expressions are extremely powerful because not only can they match exact
 
 1. You could use the regex `/(\w+)ev(\w+)\s/g`. This one is a bit tricker so we'll break it down:
 
-  - `\w` - matches any single alphanumeric character (so any letter or number, or underscore)
-  - `+` - matches the previous pattern 1 or more times
-  - `\w+` - ...so together they mean *any* 1 or more alphanumeric character
+  - `\w` - matches any single alphanumeric character (so any letter, number, or underscore)
+  - `+` - matches the previous pattern one or more times
+  - `\w+` - ...so together they mean **any** one or more alphanumeric characters
 
   - `()` - brackets around any part of a regex mean "save what was matched so we can use it later"
 
@@ -237,9 +237,7 @@ Regular expressions are extremely powerful because not only can they match exact
   - `\s` - this means a single space character
   - `/g` - we already know that the `g` means to match all the instances where this pattern is found
 
-  So, to explain this regex in plain English:
-
-  *Find ALL matches containing: any 1 or more letters/numbers (and remember them), then the letters ev, then any 1 or more letters/numbers (and remember them), then a space.*
+  So, to explain this regex in plain English: "Find ALL matches containing: any one or more letters/numbers (and remember them), then the letters ev, then any one or more letters/numbers (and remember them), then a space."
 
   So this would match any words containing the letters ev such as n**ev**er or what**ev**er, as long as they are followed by a space. Of course, pirates never say "never", they say "ne'er". So we tell the program to reconstruct the word, but with an apostrophe instead of the v.
 
@@ -248,7 +246,7 @@ Regular expressions are extremely powerful because not only can they match exact
   In the case of the word "never"
   - `$1` would equal `n` (all letters/numbers up to but not including "ev")
   - `$2` would equal `er` (all letters/numbers after "ev")
-  - ...so `"$1e'$2 "` means *the first saved string (n), then e', then the second saved string (er)* which equals `ne'er`
+  - ...so `"$1e'$2 "` means **the first saved string (n), then e', then the second saved string (er)** which equals `ne'er`
 
 
   You might be wondering why we didn't just look up and replace all instances of letter `v` with an apostrophe? Firstly, we wouldn't want to replace the letter `v` at the start of words as we would end up saying things like `'oyage` instead of `voyage` which doesn't make much sense. We also don't want to replace the letter `v` in the middle of words if it doesn't have an `e` before it otherwise we would end up with `shi'er me timbers` which just isn't what a pirate would say.
@@ -263,6 +261,6 @@ Regular expressions are extremely powerful because not only can they match exact
   ![Finished pirate](images/finished-pirate.png)
 
 
-## What's next?
+## What next?
 - See what you can add to your pirate speech generator! A more fully featured example is on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
 - Could you create a generator for any other type of speech? Perhaps you can make people talk like Yoda from Star Wars, or talk in Cockney rhyming slang?
