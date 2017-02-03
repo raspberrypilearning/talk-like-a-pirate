@@ -169,19 +169,19 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
   - `function(){` - ...execute the code inside this function... (**action**)
 
   What do you think the code `var words = $("#normal").val();` means? Can you break it down into parts?
-  - `var words =` - we are making a *variable* called `words` to store some data
+  - `var words =` - we are making a variable called `words` to store some data
   - `$('#normal')` - what is this identifier referring to?
   - `.val();` - this function means "the value of"
 
   Can you break down the line `$("#pirate").val(words);` and have a guess what it does?
 
-  Predict what will happen when you save the code and type something into the "Landlubbers" box, then try it and see if you were right.
+  Predict what will happen when you save the code and type something into the Landlubbers box, then try it and see if you were right.
 
-1. If your code worked correctly, the same words you type in the **Landlubbers** box should appear in the **Pirates** box as you type. Although this is not the finished product, it is a good step forward because we now know how to make the contents of the `pirate` textarea change when something is typed in the `normal` textarea.
+1. If your code worked correctly, the same words you type in the Landlubbers box should appear in the Pirates box as you type. Although this is not the finished product, it is a good step forward because we now know how to make the contents of the `pirate` textarea change when something is typed in the `normal` textarea.
 
 ## Replace words with pirate words
 
-1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily we know the text that was typed in the **Landlubbers** text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
+1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily we know the text that was typed in the Landlubbers text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
 
 1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between creating the variable `words` and assigning its value to the textarea with the id `#pirates`.
 
@@ -197,7 +197,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
   You might be wondering why the word "hello" is written as `/hello/gi`: this pirate secret will be revealed in the next section!
 
-1. Save your code and test it by typing in a sentence containing the word "hello" in the **Landlubbers** box. You should see your word replaced with "ahoy" in the **Pirates** box.
+1. Save your code and test it by typing in a sentence containing the word "hello" in the Landlubbers box. You should see your word replaced with "ahoy" in the Pirates box.
 
   ![Hello converted to ahoy](images/ahoy-there.png)
 
@@ -237,17 +237,16 @@ Regular expressions are extremely powerful: not only can they match exact sequen
   - `\s` - this means a single space character
   - `/g` - we already know that the `g` means to match all the instances where this pattern is found
 
-  So, to explain this regex in plain English: "Find ALL matches containing: any one or more letters/numbers (and remember them), then the letters ev, then any one or more letters/numbers (and remember them), then a space."
+  So, to explain this regex in plain English: "Find ALL matches containing any one or more letters/numbers (and remember them), then the letters ev, then any one or more letters/numbers (and remember them), then a space".
 
-  So this would match any words containing the letters ev such as n**ev**er or what**ev**er, as long as they are followed by a space. Of course, pirates never say "never", they say "ne'er". So we tell the program to reconstruct the word, but with an apostrophe instead of the v.
+  So this would match any words containing the letters ev such as n**ev**er or what**ev**er, as long as they are followed by a space. Of course, pirates say "ne'er" instead of "never", so we tell the program to reconstruct the word, but with an apostrophe instead of the v.
 
   - `$1` means what was matched by the first brackets, `$2` means the second brackets and so on...
 
   In the case of the word "never"
   - `$1` would equal `n` (all letters/numbers up to but not including "ev")
   - `$2` would equal `er` (all letters/numbers after "ev")
-  - ...so `"$1e'$2 "` means **the first saved string (n), then e', then the second saved string (er)** which equals `ne'er`
-
+  - ...so `"$1e'$2 "` means "the first saved string (n), then e', then the second saved string (er)", which equals `ne'er`
 
   You might be wondering why we didn't just look up and replace all instances of letter `v` with an apostrophe? Firstly, we wouldn't want to replace the letter `v` at the start of words as we would end up saying things like `'oyage` instead of `voyage` which doesn't make much sense. We also don't want to replace the letter `v` in the middle of words if it doesn't have an `e` before it otherwise we would end up with `shi'er me timbers` which just isn't what a pirate would say.
 
@@ -262,5 +261,5 @@ Regular expressions are extremely powerful: not only can they match exact sequen
 
 
 ## What next?
-- See what you can add to your pirate speech generator! A more fully featured example is on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
+- See what you can add to your pirate speech generator! THere is a more fully featured example on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
 - Could you create a generator for any other type of speech? Perhaps you can make people talk like Yoda from Star Wars, or talk in Cockney rhyming slang?
