@@ -147,7 +147,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
   We can generalise this as "Wait until [**identifier**] has [**event**] and do [**action**]".
 
-  If you are used to indentation in Python, you might have noticed that in JavaScript, indentation is not essential. It is still advisable to indent your program properly to ensure it is readable - for you, and anyone who may be helping you to create the resource! 
+  If you are used to indentation in Python, you might have noticed that indentation is not essential in Javascript. It is still advisable to indent your program properly, though: indentation ensures your code is readable both for you, and for anyone who may be helping you to create the resource! 
 
 1. Save the code and refresh your web browser. If your jQuery code has worked, you should see a popup box appear when you load the page.
 
