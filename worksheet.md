@@ -2,7 +2,7 @@
 
 In this resource you will create a web page which can translate normal English text into pirate speak using jQuery and regular expressions.
 
-Or, in pirate speak... 
+Or, in pirate speak...
 Arr, me hearties. In this resource ye will create a web page which can translate normal English text into pirate speak usin' jQuery and regularrr expressions.
 
 ## Create a web page
@@ -25,7 +25,7 @@ Arr, me hearties. In this resource ye will create a web page which can translate
 
   ![Nano creating HTML](images/pi-html-nano.png)
 
- - If you're using [CodePen](http://codepen.io), simply open up a new pen, then **skip the second and third steps**.
+ - Alternatively, you may wish to create this resource entirely within your web browser which you can do using [CodePen](http://codepen.io). Simply open up a new "pen", then **skip the second and third steps**.
 
 
 2. This HTML code gives you the basic structure of a page. Copy and paste the code into the file you created, then save the file.
@@ -147,6 +147,8 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
   We can generalise this as "Wait until [**identifier**] has [**event**] and do [**action**]".
 
+  If you are used to indentation in Python, you might have noticed that in JavaScript, indentation is not essential. It is still advisable to indent your program properly to ensure it is readable - for you, and anyone who may be helping you to create the resource! 
+
 1. Save the code and refresh your web browser. If your jQuery code has worked, you should see a popup box appear when you load the page.
 
   ![Page loaded dialog](images/page-has-loaded.png)
@@ -183,7 +185,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
 1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily we know the text that was typed in the Landlubbers text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
 
-1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between creating the variable `words` and assigning its value to the textarea with the id `#pirates`.
+1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between `var words = $("#normal").val();` and `$("#pirate").val(words);`:
 
   ```JavaScript
   words = words.replace(/hello/gi, "ahoy");
