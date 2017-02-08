@@ -58,6 +58,7 @@ jQuery is a JavaScript library intended to make it easy to use JavaScript. The e
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   ```
+  
 Assuming the computer running your pirate speak web page has an internet connection, you should now have jQuery available. If you want to run the generator without an internet connection, **this code will not work** as your computer will not be able to access the library, so follow the instructions from [w3schools](http://www.w3schools.com/jquery/jquery_get_started.asp) to download a local copy of jQuery.
 
 ## Typing in your text
@@ -82,7 +83,8 @@ Assuming the computer running your pirate speak web page has an internet connect
   ```html
   <style type="text/css">
     textarea {
-      width: 400px;
+
+width: 400px;
       height: 200px;
       font-family: arial;
     }
@@ -119,7 +121,7 @@ Assuming the computer running your pirate speak web page has an internet connect
   </html>
   ```
 
-  ...or like this if you are using CodePen
+  ...or like this if you are using CodePen:
 
   ![Intermediate step](images/codepen-intermediate.png)
 
@@ -136,26 +138,28 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
     alert("Page has loaded");
   });
   ```
+  
   In plain English, this code says "Wait until the page has fully loaded, then make a box pop up saying that it has loaded".
 
   The code may look complicated, so let's break it down:
+  
   - `$(document)` - This identifies what you are talking about, in this case the whole document. This is the **identifier**.
   - `.ready(` - This is a call to a function which means "when it is ready", or "when it has fully loaded". This is the **event**.
   - `function(){` - This creates a function (a section of code) to be executed when the event is triggered.
   - `alert("Page has loaded");` - This makes a box pop up with the message "Page has loaded". This is the **action**.
-  - `});` - The ending for the function (`}`), the ending for the `.ready(` call (`)`) and the end of this line of code (`;`)
+  - `});` - The ending for the function (`}`), the ending for the `.ready(` call (`)`) and the end of this line of code (`;`).
 
   We can generalise this as "Wait until [**identifier**] has [**event**] and do [**action**]".
 
   If you are used to indentation in Python, you might have noticed that indentation is not essential in Javascript. It is still advisable to indent your program properly, though: indentation ensures your code is readable both for you, and for anyone who may be helping you to create the resource! 
 
-1. Save the code and refresh your web browser. If your jQuery code has worked, you should see a popup box appear when you load the page.
+1. Save the code and refresh your web browser. If your jQuery code has worked, you should see a pop-up box appear when you load the page.
 
-  ![Page loaded dialog](images/page-has-loaded.png)
+  ![Page loaded dialogue](images/page-has-loaded.png)
 
 ## Change text on key press
 
-1. It is always a good idea to include this check for whether the page has loaded in your jQuery programs so that the page does not try to interact with elements which have not yet loaded. However, we don't really want to pop up a box saying the page has loaded every time someone visits our page, so delete the line `alert("Page has loaded");` and instead paste in this code:
+1. It is always a good idea to include this check for whether the page has loaded in your jQuery programs, so that the page doesn't try to interact with elements which haven't loaded yet. However, we don't really want to pop up a box saying the page has loaded every time someone visits our page, so delete the line `alert("Page has loaded");` and instead paste in this code:
 
   ```JavaScript
   $("#normal").keyup(function(){
@@ -166,14 +170,16 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
   ```
 
   This code says:
-  - `$("#normal")` - referring to the textarea with the id `normal` (# means id)... (**identifier**)
-  - `.keyup(` - when a key is pressed and let go... (**event**)
-  - `function(){` - ...execute the code inside this function... (**action**)
+  
+  - `$("#normal")` - Referring to the textarea with the id `normal` (# means id)... (**identifier**)
+  - `.keyup(` - When a key is pressed and let go... (**event**)
+  - `function(){` - ...Execute the code inside this function... (**action**)
 
   What do you think the code `var words = $("#normal").val();` means? Can you break it down into parts?
-  - `var words =` - we are making a variable called `words` to store some data
-  - `$('#normal')` - what is this identifier referring to?
-  - `.val();` - this function means "the value of"
+  
+  - `var words =` - We are making a variable called `words` to store some data.
+  - `$('#normal')` - What is this identifier referring to?
+  - `.val();` - This function means "the value of".
 
   Can you break down the line `$("#pirate").val(words);` and have a guess what it does?
 
@@ -183,7 +189,7 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
 
 ## Replace words with pirate words
 
-1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily we know the text that was typed in the Landlubbers text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
+1. To talk like a pirate, we need to replace certain words with their piratical equivalent. For example, we know pirates say "ahoy" instead of "hello". Luckily, we know the text that was typed in the Landlubbers text box because we have retrieved and stored it in our `words` variable. Let's use a function to find the word `"hello"` and replace it with `"ahoy"`.
 
 1. Here is a line of code which should be copied and pasted where the gap is left in the previous code, between `var words = $("#normal").val();` and `$("#pirate").val(words);`:
 
@@ -192,10 +198,11 @@ jQuery allows you to detect when **events** happen on a web page (such as the us
   ```
 
   Let's examine this code further:
-  - `words =` - Set the value of the variable words equal to...
+  
+  - `words =` - Set the value of the variable `words` equal to...
   - `words.replace(` - ...whatever it was before, but replace...
-  - `/hello/gi` - ...the word hello with...
-  - `, "ahoy");` - ...the word ahoy
+  - `/hello/gi` - ...the word "hello" with...
+  - `, "ahoy");` - ...the word "ahoy"
 
   You might be wondering why the word "hello" is written as `/hello/gi`: this pirate secret will be revealed in the next section!
 
@@ -212,6 +219,7 @@ So how does the computer know which word we want to replace and what to replace 
 ```JavaScript
 words = words.replace(/hello/gi, "ahoy");
 ```
+
 You might have wondered why we had to write `/hello/gi` for the word to find, and only `"ahoy"` for the word to replace it with. Why is that? The answer is that to specify the sequence of characters we are looking for, we are actually using something called a **regular expression** (sometimes called a **regex** for short).
 
 A regular expression is a way of specifying a particular sequence of characters to look for in a piece of text.
@@ -220,48 +228,52 @@ A regular expression is a way of specifying a particular sequence of characters 
 - The `g` after the second slash means **global**: we are telling the code to replace the word `hello` with `ahoy` **every time it is found**. If we did not put a `g` here, only the first `hello` found would be replaced.
 - The `i` means **case insensitive**: we are telling the code that we don't mind if it finds `Hello` or `HELLO` or even `hELlo'`. All of these will match and will be replaced with `ahoy`.
 
-Regular expressions are extremely powerful: not only can they match exact sequences of characters like `hello`, they can also be used to match patterns of characters. There is a good [guide on how to create a regex](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), but we wil explain some examples that you could use in your pirate text generator to get you started:
+Regular expressions are extremely powerful: not only can they match exact sequences of characters like `hello`, they can also be used to match patterns of characters. There is a good [guide on how to create a regex](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), but we will explain some examples that you could use in your pirate text generator to get you started:
 
-1. You could use the regex character `^` (shift+6 on many keyboards) which means "the start of the text". This code will insert the line `"Arr, me hearties. "` at the start of anything you type!
+1. You could use the regex character `^` (Shift + 6 on many keyboards) which means "the start of the text". This code will insert the line `"Arr, me hearties. "` at the start of anything you type!
+  
   ```JavaScript
   words = words.replace(/^/, "Arr, me hearties. ");
   ```
 
-1. You could use the regex `/(\w+)ev(\w+)\s/g`. This one is a bit tricker so we'll break it down:
+1. You could use the regex `/(\w+)ev(\w+)\s/g`. This one is a bit trickier, so we'll break it down:
 
-  - `\w` - matches any single alphanumeric character (so any letter, number, or underscore)
-  - `+` - matches the previous pattern one or more times
-  - `\w+` - ...so together they mean **any** one or more alphanumeric characters
+  - `\w` - Matches any single alphanumeric character (so any letter, number, or underscore)
+  - `+` - Matches the previous pattern one or more times
+  - `\w+` - ...So together they mean **any** one or more alphanumeric characters
 
-  - `()` - brackets around any part of a regex mean "save what was matched so we can use it later"
+  - `()` - Brackets around any part of a regex mean "save what was matched so we can use it later"
 
-  - `ev` - this is just the normal letters e and v. (Notice that the `\w` had a backslash character to show that it means something different to a normal letter w.)
-  - `\s` - this means a single space character
-  - `/g` - we already know that the `g` means to match all the instances where this pattern is found
+  - `ev` - This is just the normal letters e and v. (Notice that the `\w` had a backslash character to show that it means something different to a normal letter w.)
+  - `\s` - This means a single space character
+  - `/g` - We already know that the `g` means to match all the instances where this pattern is found
 
   So, to explain this regex in plain English: "Find ALL matches containing any one or more letters/numbers (and remember them), then the letters ev, then any one or more letters/numbers (and remember them), then a space".
 
   So this would match any words containing the letters ev such as n**ev**er or what**ev**er, as long as they are followed by a space. Of course, pirates say "ne'er" instead of "never", so we tell the program to reconstruct the word, but with an apostrophe instead of the v.
 
-  - `$1` means what was matched by the first brackets, `$2` means the second brackets and so on...
+  - `$1` Means what was matched by the first brackets, `$2` means the second brackets, and so on...
 
-  In the case of the word "never"
+  In the case of the word "never":
+  
   - `$1` would equal `n` (all letters/numbers up to but not including "ev")
   - `$2` would equal `er` (all letters/numbers after "ev")
-  - ...so `"$1e'$2 "` means "the first saved string (n), then e', then the second saved string (er)", which equals `ne'er`
+  - So `"$1e'$2 "` means "the first saved string (n), then e', then the second saved string (er)", which equals `ne'er`.
 
-  You might be wondering why we didn't just look up and replace all instances of letter `v` with an apostrophe? Firstly, we wouldn't want to replace the letter `v` at the start of words as we would end up saying things like `'oyage` instead of `voyage` which doesn't make much sense. We also don't want to replace the letter `v` in the middle of words if it doesn't have an `e` before it otherwise we would end up with `shi'er me timbers` which just isn't what a pirate would say.
+  You might be wondering why we didn't just look up and replace all instances of letter `v` with an apostrophe? Firstly, we wouldn't want to replace the letter `v` at the start of words, as we would end up saying things like `'oyage` instead of `voyage` which doesn't make much sense. We also don't want to replace the letter `v` in the middle of words if it doesn't have an `e` before it, otherwise we would end up with `shi'er me timbers` which just isn't what a pirate would say.
 
   Here is the finished code:
 
   ```JavaScript
   words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 ");
   ```
+  
   Here is our finished pirate text generator with both of these regular expressions demonstrated, as well as some other pirate word replacements.
 
   ![Finished pirate](images/finished-pirate.png)
 
 
 ## What next?
+
 - See what you can add to your pirate speech generator! There is a more fully featured example on [CodePen](http://codepen.io/rpflaura/pen/EZQzdx) for you to investigate and try out your pirate speech skills.
 - Could you create a generator for any other type of speech? Perhaps you can make people talk like Yoda from Star Wars, or talk in Cockney rhyming slang?
