@@ -83,8 +83,7 @@ Assuming the computer running your pirate speak web page has an internet connect
   ```html
   <style type="text/css">
     textarea {
-
-width: 400px;
+      width: 400px;
       height: 200px;
       font-family: arial;
     }
