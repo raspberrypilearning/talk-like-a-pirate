@@ -235,7 +235,7 @@ Regular expressions are extremely powerful: not only can they match exact sequen
   words = words.replace(/^/, "Arr, me hearties. ");
   ```
 
-1. You could use the regex `/(\w+)ev(\w+)\s/g`. This one is a bit trickier, so we'll break it down:
+1. You could use the regex `/(\w+)ev(\w+)\s/g, "$1e'$2 "`. This one is a bit trickier, so we'll break it down:
 
   - `\w` - Matches any single alphanumeric character (so any letter, number, or underscore)
   - `+` - Matches the previous pattern one or more times
