@@ -1,3 +1,3 @@
 ## What you will need
 
-An internet connected computer
+- An internet connected computer
