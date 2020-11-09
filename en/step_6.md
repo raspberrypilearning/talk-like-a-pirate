@@ -9,7 +9,7 @@
   <textarea id="normal"></textarea>
   ```
 
-- Using this code as an example, add another `<textarea>` box below the first one which will contain the pirate speak text. Set the id to `pirate`.
+- Using this code as an example, add another box below the first one called "Pirates" and a `<textarea>` with **id** value `pirate` which will contain the pirate speak text.
 
 - Save the file and refresh your internet browser to check that the textarea boxes appear as expected.
 
