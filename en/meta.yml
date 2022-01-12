@@ -1,7 +1,8 @@
 ---
 title: Talk like a Pirate
 hero_image: images/banner.png
-description: Create a web page which can translate normal English text into pirate speak
+description: Create a web page which can translate normal English text into pirate
+  speak
 original_url: https://raspberrypi.org/learning/talk-like-a-pirate
 theme: red
 duration: 2
@@ -16,9 +17,10 @@ hardware: ''
 software: html-css-javascript
 version: 3
 last_tested: 2017-01-01
-steps: 
+steps:
 - title: Introduction
 - title: What you will need
+  completion: engaged
 - title: Talk like a Pirate
 - title: Create a web page
 - title: Add jQuery
@@ -26,5 +28,6 @@ steps:
 - title: Checking the page has loaded
 - title: Change text on key press
 - title: Replace words with pirate words
+  completion: internal
 - title: Using regular expressions to alter words
 - title: What next?
