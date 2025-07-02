@@ -32,6 +32,5 @@ steps:
 - title: Using regular expressions to alter words
   completion:
   - internal
-- title: What next?
   completion:
   - external
